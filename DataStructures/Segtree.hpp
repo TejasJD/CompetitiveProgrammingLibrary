@@ -21,7 +21,7 @@ private:
     // build main function
     void build(vector<int> &a, int x, int l, int r) {
         if(l == r) {
-            seg[x] = a[l];
+            seg[x] = Node(a[l]);
             return;
         }
         int m = (l + r) / 2;
@@ -31,7 +31,7 @@ private:
     }
 
     // set main function
-    void set(int i, int v, int x, int l, int r) {
+    void set(int i, Node v, int x, int l, int r) {
         if(l == r) {
             seg[x] = v;
             return;
@@ -76,7 +76,7 @@ public:
     }
 
     // set ith element of segment tree to v
-    void set(int i, int v) {
+    void set(int i, Node v) {
         set(i, v, 0, 0, size - 1);
     }
 
